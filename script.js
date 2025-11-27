@@ -3,24 +3,14 @@ let filteredCourses = [];
 
 class Course {
   constructor(obj){
-    this.id =obj.id;
+    this.id = obj.id;
     this.title = obj.title;
     this.department = obj.department;
-    this.level=obj.level;
-    this.credits =obj.credits;
+    this.level = obj.level;
+    this.credits = obj.credits;
     this.instructor = obj.instructor;
-    this.description =obj.description;
+    this.description = obj.description;
     this.semester = obj.semester;
-  }
-getDetailsHTML() {
-    return `
-      <strong>${this.id} — ${this.title}</strong><br>
-      <p><strong>Instructor:</strong> ${this.instructor}</p>
-      <p><strong>Level:</strong> ${this.level}</p>
-      <p><strong>Credits:</strong> ${this.credits}</p>
-      <p><strong>Semester:</strong> ${this.semester}</p>
-      <p>${this.description}</p>
-    `;
   }
 }
 
@@ -122,7 +112,6 @@ function semesterToNumber(str) {
   return parseInt(year) * 10 + map[season];
 }
 
-
 function displayCourses(list) {
   const ul = document.getElementById("courseUl");
   ul.innerHTML = "";
@@ -131,7 +120,7 @@ function displayCourses(list) {
     const li = document.createElement("li");
     li.textContent = `${course.id} — ${course.title}`;
     li.addEventListener("click", () => {
-      showDetails(course);
+      displayCourseDetails(course);   
     });
     ul.appendChild(li);
   });
@@ -150,10 +139,4 @@ function displayCourseDetails(course) {
   document.getElementById("course-instructor").textContent = course.instructor;
   document.getElementById("course-semester").textContent = course.semester;
   document.getElementById("course-description").textContent = course.description;
-}
-
-
-function showDetails(course) {
-  document.getElementById("courseDetails").innerHTML =
-    course.getDetailsHTML();
 }
