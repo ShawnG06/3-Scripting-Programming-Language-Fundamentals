@@ -74,7 +74,7 @@ function fillSelect(id, values) {
   });
 }
 
-document.querySelectorAll("#filtesRow select").forEach(sel => {
+document.querySelectorAll("#filterRow select").forEach(sel => {
   sel.addEventListener("change", applyFilters);
 });
 
