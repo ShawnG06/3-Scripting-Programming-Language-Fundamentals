@@ -120,7 +120,7 @@ function displayCourses(list) {
     const li = document.createElement("li");
     li.textContent = `${course.id} — ${course.title}`;
     li.addEventListener("click", () => {
-      displayCourseDetails(course);   
+      displayCourseDetails(course);  
     });
     ul.appendChild(li);
   });
