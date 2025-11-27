@@ -1,5 +1,5 @@
 body {
-  font family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 20px;
 }
 
@@ -27,3 +27,22 @@ li {
 li:hover {
   background: #f0f0f0
 }
+
+#mainLayout {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#courseUl {
+  width: 35%;
+  list-style: none;
+  padding: 0;
+}
+
+#courseDetails {
+  width: 65%;
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+}
+
