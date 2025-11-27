@@ -141,6 +141,18 @@ function displayCourses(list) {
   }
 }
 
+function displayCourseDetails(course) {
+  document.getElementById("course-title").textContent = course.title;
+  document.getElementById("course-id").textContent = course.id;
+  document.getElementById("course-department").textContent = course.department;
+  document.getElementById("course-level").textContent = course.level;
+  document.getElementById("course-credits").textContent = course.credits;
+  document.getElementById("course-instructor").textContent = course.instructor;
+  document.getElementById("course-semester").textContent = course.semester;
+  document.getElementById("course-description").textContent = course.description;
+}
+
+
 function showDetails(course) {
   document.getElementById("courseDetails").innerHTML =
     course.getDetailsHTML();
