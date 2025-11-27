@@ -7,7 +7,7 @@ class Course {
     this.title = obj.title;
     this.department = obj.department;
     this.level=obj.level;
-    this.credits =obj.credit;
+    this.credits =obj.credits;
     this.instructor = obj.instructor;
     this.description =obj.description;
     this.semester = obj.semester;
@@ -50,9 +50,6 @@ document.getElementById("fileInput").addEventListener("change", function () {
   reader.readAsText(file);
 });
 
-//--------------------------------------------------
-// FILTERING
-//--------------------------------------------------
 function generateDropdowns() {
   const levelSet = new Set();
   const creditsSet = new Set();
@@ -77,7 +74,7 @@ function fillSelect(id, values) {
   });
 }
 
-document.querySelectorAll("#filters select").forEach(sel => {
+document.querySelectorAll("#filtesRow select").forEach(sel => {
   sel.addEventListener("change", applyFilters);
 });
 
@@ -96,9 +93,6 @@ function applyFilters() {
   displayCourses(filteredCourses);
 }
 
-//--------------------------------------------------
-// SORTING
-//--------------------------------------------------
 document.getElementById("sortSelect").addEventListener("change", applySort);
 
 function applySort() {
@@ -128,9 +122,7 @@ function semesterToNumber(str) {
   return parseInt(year) * 10 + map[season];
 }
 
-//--------------------------------------------------
-// DISPLAYING COURSES
-//--------------------------------------------------
+
 function displayCourses(list) {
   const ul = document.getElementById("courseUl");
   ul.innerHTML = "";
